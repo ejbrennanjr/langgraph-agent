@@ -1,0 +1,37 @@
+# =================================================================================================
+# Retrieve all Groups (Teams)
+# =================================================================================================
+curl -X GET "https://api.app.shortcut.com/api/v3/groups" \
+     -H "Content-Type: application/json" \
+     -H "Shortcut-Token: 66eb3bb5-a7f9-468f-9f58-8150a8e90bf0"
+
+# =================================================================================================
+# Retrieve all Workflows
+# =================================================================================================
+curl -X GET "https://api.app.shortcut.com/api/v3/workflows" \
+     -H "Content-Type: application/json" \
+     -H "Shortcut-Token: 66eb3bb5-a7f9-468f-9f58-8150a8e90bf0"
+
+# =================================================================================================
+# Retrieve all Epics 
+# =================================================================================================
+curl -X GET "https://api.app.shortcut.com/api/v3/epics" \
+     -H "Content-Type: application/json" \
+     -H "Shortcut-Token: 66eb3bb5-a7f9-468f-9f58-8150a8e90bf0"
+
+
+# =================================================================================================
+# Retrieve all Epics for a particular grop
+# =================================================================================================
+curl -X DELETE "https://api.app.shortcut.com/api/v3/epics/EPIC_ID" \
+     -H "Content-Type: application/json" \
+     -H "Shortcut-Token: 66eb3bb5-a7f9-468f-9f58-8150a8e90bf0"
+
+
+# =================================================================================================
+# Retrieve all Stories for a particular group, in a particular state
+# =================================================================================================
+            
+curl -X GET "https://api.app.shortcut.com/api/v3/search/stories?query=state%3A\"To%20Do\"%20team%3A\"AI%20Hacker\"" \
+     -H "Content-Type: application/json" \
+     -H "Shortcut-Token: 66eb3bb5-a7f9-468f-9f58-8150a8e90bf0"

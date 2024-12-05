@@ -1,0 +1,15 @@
+{
+  "dockerfile_lines": [],
+  "graphs": {
+    "simple_graph": "./src/module-1/router.ts:graph",
+    "agent": "./src/module-1/agent.ts:graph",
+    "router": "./src/module-1/router.ts:graph",
+    "chatbot-summarization": "./src/module-2/chatbot-summarization.ts:graph",
+    "research-assistant": "./src/module-4/research-assistant.ts:graph",
+    "parallelization-rag": "./src/module-4/parallelization-rag.ts:graph",
+    "swagger": "./src/swagger/index.ts:graph",
+    "coder": "./src/coder/index.ts:graph"
+  },
+  "env": ".env",
+  "node_version": "20"
+}

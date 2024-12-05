@@ -1,0 +1,21 @@
+[
+  {
+    "app_url": "https://app.shortcut.com/ejb/team/66e60f92-ccd0-4330-8288-5463eae8ef94",
+    "description": "",
+    "archived": false,
+    "entity_type": "group",
+    "color": null,
+    "num_stories_started": 1,
+    "mention_name": "ai-hacker",
+    "name": "AI Hacker",
+    "global_id": "v2:t:66e60f92-e410-4bfe-bb1a-7b79d6dea415:66e60f92-ccd0-4330-8288-5463eae8ef94",
+    "color_key": null,
+    "num_stories": 3,
+    "num_epics_started": 0,
+    "num_stories_backlog": 1,
+    "id": "66e60f92-ccd0-4330-8288-5463eae8ef94",
+    "display_icon": null,
+    "member_ids": ["66e60f92-980d-484d-902c-c2177bd499b3"],
+    "workflow_ids": [500000005]
+  }
+]

@@ -1,0 +1,356 @@
+{
+  "nodes": [
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::variable::STRING_VALUE",
+      "data": {
+        "declarationKind": "unresolved",
+        "datatype": {
+          "baseType": "void",
+          "typeArguments": []
+        },
+        "hasInitializer": false,
+        "isReadonly": false,
+        "destructuring": {
+          "kind": "unresolved",
+          "names": []
+        },
+        "decorators": []
+      },
+      "name": "STRING_VALUE",
+      "type": "variable",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::function::helper",
+      "data": {
+        "parameters": [],
+        "returnType": {
+          "baseType": "void",
+          "typeArguments": []
+        },
+        "generics": [],
+        "capability": "sync",
+        "declarationStyle": "unresolved"
+      },
+      "name": "helper",
+      "type": "function",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::Utility",
+      "data": {
+        "generics": [],
+        "extends": [],
+        "memberNames": {
+          "methods": [],
+          "properties": []
+        },
+        "decorators": [],
+        "implements": [],
+        "constructors": []
+      },
+      "name": "Utility",
+      "type": "class",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::DefaultClass",
+      "data": {
+        "generics": [],
+        "extends": [],
+        "memberNames": {
+          "methods": [],
+          "properties": []
+        },
+        "decorators": [],
+        "implements": [],
+        "constructors": []
+      },
+      "name": "DefaultClass",
+      "type": "class",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues",
+      "data": {
+        "path": "./sourceValues",
+        "moduleKind": "unresolved",
+        "imports": {
+          "named": [],
+          "namespaces": [],
+          "defaults": []
+        },
+        "exports": {
+          "named": [],
+          "reExports": [],
+          "wildcards": []
+        }
+      },
+      "name": "sourceValues",
+      "type": "module",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::type::Status",
+      "data": {
+        "kind": "unresolved",
+        "generics": [],
+        "unionTypes": [],
+        "intersectionTypes": [],
+        "literalValues": [],
+        "tupleTypes": [],
+        "templateParts": [],
+        "properties": []
+      },
+      "name": "Status",
+      "type": "type",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::module::sourceTypes",
+      "data": {
+        "path": "./sourceTypes",
+        "moduleKind": "unresolved",
+        "imports": {
+          "named": [],
+          "namespaces": [],
+          "defaults": []
+        },
+        "exports": {
+          "named": [],
+          "reExports": [],
+          "wildcards": []
+        }
+      },
+      "name": "sourceTypes",
+      "type": "module",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::namespace-import::types",
+      "data": {
+        "namespaceName": "types"
+      },
+      "name": "types",
+      "type": "namespace-import",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::module::sourceTypes",
+      "data": {
+        "path": "./sourceTypes",
+        "moduleKind": "unresolved",
+        "imports": {
+          "named": [],
+          "namespaces": [],
+          "defaults": []
+        },
+        "exports": {
+          "named": [],
+          "reExports": [],
+          "wildcards": []
+        }
+      },
+      "name": "sourceTypes",
+      "type": "module",
+      "scope": "internal",
+      "status": "placeholder",
+      "location": {
+        "filePath": "",
+        "startLine": 0,
+        "startColumn": 0,
+        "endLine": 0,
+        "endColumn": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports-->module imports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::variable::STRING_VALUE",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::variable::STRING_VALUE",
+      "label": "module imports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues-->module exports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::variable::STRING_VALUE",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::variable::STRING_VALUE",
+      "label": "module exports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports-->module imports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::function::helper",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::function::helper",
+      "label": "module imports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues-->module exports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::function::helper",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::function::helper",
+      "label": "module exports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports-->module imports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::Utility",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::Utility",
+      "label": "module imports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues-->module exports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::Utility",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::Utility",
+      "label": "module exports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports-->module imports default-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::DefaultClass",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::DefaultClass",
+      "label": "module imports default"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues-->module exports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::DefaultClass",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::class::DefaultClass",
+      "label": "module exports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports-->module depends on-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts::module::sourceValues",
+      "label": "module depends on"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports-->module imports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::type::Status",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::type::Status",
+      "label": "module imports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::module::sourceTypes-->module exports named-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::type::Status",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::module::sourceTypes",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::type::Status",
+      "label": "module exports named"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports-->module depends on-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::module::sourceTypes",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::module::sourceTypes",
+      "label": "module depends on"
+    },
+    {
+      "id": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports-->module imports namespace-->/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::namespace-import::types",
+      "source": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/mixedImports.ts::module::mixedImports",
+      "target": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts::namespace-import::types",
+      "label": "module imports namespace"
+    }
+  ],
+  "data": {
+    "path": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts",
+    "moduleKind": "unresolved",
+    "imports": {
+      "named": [
+        {
+          "modulePath": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts",
+          "name": "STRING_VALUE",
+          "alias": null
+        },
+        {
+          "modulePath": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts",
+          "name": "helper",
+          "alias": "utilHelper"
+        },
+        {
+          "modulePath": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts",
+          "name": "Utility",
+          "alias": null
+        },
+        {
+          "modulePath": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts",
+          "name": "Status",
+          "alias": null
+        }
+      ],
+      "namespaces": [
+        {
+          "modulePath": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceTypes.ts",
+          "alias": "types"
+        }
+      ],
+      "defaults": [
+        {
+          "modulePath": "/Users/edwardbrennan/Workspace/langchain/langgraph-agent/src/x-tests/fixtures/import-patterns/sourceValues.ts",
+          "alias": null
+        }
+      ]
+    },
+    "exports": {
+      "named": [],
+      "reExports": [],
+      "wildcards": []
+    }
+  }
+}

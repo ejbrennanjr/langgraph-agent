@@ -1,0 +1,4 @@
+export default {
+  apiUrl: 'https://api.example.com',
+  timeout: 5000
+};

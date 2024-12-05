@@ -1,0 +1,168 @@
+import { z } from "zod";
+import { combineMappingResults } from "@/libs/typescript-graph/mappers/utils/combineMappingResults";
+import { MappingResultSchema } from "@/libs/typescript-graph/mappers/domain/MappingResult";
+import { TypeScriptNodeTypes } from "@/libs/typescript-graph/domain/TypeScriptNode";
+import { TypeScriptEdgeRelationshipValues } from "@/libs/typescript-graph/domain/TypeScriptEdge";
+
+// Mock Node and Edge Factories
+const createMockNode = (
+  id: string,
+  type: TypeScriptNodeTypes,
+  name: string
+) => ({
+  id,
+  name,
+  type,
+  scope: "internal",
+  status: "resolved",
+  location: {
+    filePath: `/mock/path/${name}.ts`,
+    startLine: 1,
+    startColumn: 1,
+    endLine: 10,
+    endColumn: 20,
+  },
+  data: {},
+});
+
+const createMockEdge = (
+  source: string,
+  target: string,
+  label: TypeScriptEdgeRelationshipValues
+) => ({
+  id: `${source}-->${label}-->${target}`,
+  source,
+  target,
+  label,
+});
+
+// Mock Schema
+const MockDataSchema = z.object({
+  metadata: z
+    .object({
+      description: z.string().default("No description provided"),
+      tags: z.array(z.string()).default([]),
+    })
+    .default({}),
+  nested: z
+    .object({
+      count: z.number().default(0),
+      flags: z.array(z.boolean()).default([]),
+    })
+    .default({}),
+});
+
+// Test Data
+const result1 = MappingResultSchema(MockDataSchema).parse({
+  nodes: [createMockNode("node1", TypeScriptNodeTypes.Class, "ClassA")],
+  edges: [
+    createMockEdge(
+      "node1",
+      "node2",
+      TypeScriptEdgeRelationshipValues.ModuleDependsOn
+    ),
+  ],
+  data: {
+    metadata: { description: "Result 1" },
+    nested: { count: 1, flags: [true] },
+  },
+});
+
+const result2 = MappingResultSchema(MockDataSchema).parse({
+  nodes: [createMockNode("node3", TypeScriptNodeTypes.Function, "FunctionB")],
+  edges: [
+    createMockEdge(
+      "node3",
+      "node4",
+      TypeScriptEdgeRelationshipValues.ModuleImportsDefault
+    ),
+  ],
+  data: {
+    metadata: { tags: ["tag1"] },
+    nested: { count: 2, flags: [false] },
+  },
+});
+
+// Test Suite
+describe("combineMappingResults", () => {
+  it("should combine nodes, edges, and data from multiple results", () => {
+    const combined = combineMappingResults(MockDataSchema, [result1, result2]);
+
+    expect(combined).toEqual({
+      nodes: [
+        createMockNode("node1", TypeScriptNodeTypes.Class, "ClassA"),
+        createMockNode("node3", TypeScriptNodeTypes.Function, "FunctionB"),
+      ],
+      edges: [
+        createMockEdge(
+          "node1",
+          "node2",
+          TypeScriptEdgeRelationshipValues.ModuleDependsOn
+        ),
+        createMockEdge(
+          "node3",
+          "node4",
+          TypeScriptEdgeRelationshipValues.ModuleImportsDefault
+        ),
+      ],
+      data: {
+        metadata: {
+          description: "Result 1",
+          tags: ["tag1"],
+        },
+        nested: {
+          count: 2, // From result2
+          flags: [true, false], // Concatenated from result1 and result2
+        },
+      },
+    });
+  });
+
+  it("should handle empty results", () => {
+    const combined = combineMappingResults(MockDataSchema, []);
+
+    expect(combined).toEqual({
+      nodes: [],
+      edges: [],
+      data: {
+        metadata: {
+          description: "No description provided",
+          tags: [],
+        },
+        nested: {
+          count: 0,
+          flags: [],
+        },
+      },
+    });
+  });
+
+  it("should handle a single result", () => {
+    const combined = combineMappingResults(MockDataSchema, [result1]);
+
+    expect(combined).toEqual(result1);
+  });
+
+  it("should deep merge nested objects and concatenate arrays", () => {
+    const result3 = MappingResultSchema(MockDataSchema).parse({
+      nodes: [],
+      edges: [],
+      data: {
+        nested: { count: 3, flags: [false, true] },
+      },
+    });
+
+    const combined = combineMappingResults(MockDataSchema, [result1, result3]);
+
+    expect(combined.data).toEqual({
+      metadata: {
+        description: "Result 1",
+        tags: [],
+      },
+      nested: {
+        count: 3, // Overwritten by result3
+        flags: [true, false, true], // Concatenated from result1 and result3
+      },
+    });
+  });
+});

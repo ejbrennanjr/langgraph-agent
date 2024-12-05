@@ -1,0 +1,86 @@
+[
+  {
+    "description": "Our default workflow, designed for product and engineering teams. Add to or edit these States to customize your team's workflow.",
+    "entity_type": "workflow",
+    "project_ids": [],
+    "states": [
+      {
+        "description": "",
+        "entity_type": "workflow-state",
+        "verb": null,
+        "name": "Backlog",
+        "global_id": "v2:wfs:66e60f92-e410-4bfe-bb1a-7b79d6dea415:500000006",
+        "num_stories": 56,
+        "type": "backlog",
+        "updated_at": "2024-09-14T22:34:58Z",
+        "id": 500000006,
+        "num_story_templates": 0,
+        "position": 1,
+        "created_at": "2024-09-14T22:34:58Z"
+      },
+      {
+        "description": "",
+        "entity_type": "workflow-state",
+        "verb": null,
+        "name": "To Do",
+        "global_id": "v2:wfs:66e60f92-e410-4bfe-bb1a-7b79d6dea415:500000007",
+        "num_stories": 1,
+        "type": "unstarted",
+        "updated_at": "2024-09-14T22:34:58Z",
+        "id": 500000007,
+        "num_story_templates": 0,
+        "position": 2,
+        "created_at": "2024-09-14T22:34:58Z"
+      },
+      {
+        "description": "",
+        "entity_type": "workflow-state",
+        "verb": "start",
+        "name": "In Progress",
+        "global_id": "v2:wfs:66e60f92-e410-4bfe-bb1a-7b79d6dea415:500000008",
+        "num_stories": 1,
+        "type": "started",
+        "updated_at": "2024-09-14T22:34:58Z",
+        "id": 500000008,
+        "num_story_templates": 0,
+        "position": 3,
+        "created_at": "2024-09-14T22:34:58Z"
+      },
+      {
+        "description": "",
+        "entity_type": "workflow-state",
+        "verb": null,
+        "name": "In Review",
+        "global_id": "v2:wfs:66e60f92-e410-4bfe-bb1a-7b79d6dea415:500000009",
+        "num_stories": 0,
+        "type": "started",
+        "updated_at": "2024-09-14T22:34:58Z",
+        "id": 500000009,
+        "num_story_templates": 0,
+        "position": 4,
+        "created_at": "2024-09-14T22:34:58Z"
+      },
+      {
+        "description": "",
+        "entity_type": "workflow-state",
+        "verb": "finish",
+        "name": "Done",
+        "global_id": "v2:wfs:66e60f92-e410-4bfe-bb1a-7b79d6dea415:500000010",
+        "num_stories": 0,
+        "type": "done",
+        "updated_at": "2024-09-14T22:34:58Z",
+        "id": 500000010,
+        "num_story_templates": 0,
+        "position": 5,
+        "created_at": "2024-09-14T22:34:58Z"
+      }
+    ],
+    "name": "Standard",
+    "updated_at": "2024-09-14T22:34:58Z",
+    "auto_assign_owner": true,
+    "id": 500000005,
+    "team_id": 500000005,
+    "created_at": "2024-09-14T22:34:58Z",
+    "default_state_id": 500000007
+  }
+]

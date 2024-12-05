@@ -1,0 +1,121 @@
+/**
+ * @fileoverview Node retrieval/creation utility
+ *
+ * Provides a utility function to check for an existing node in the graph by ID or create a new placeholder node
+ * if no existing node is found. This function maintains consistent ID generation and placeholder status
+ * while allowing the caller to determine whether the node needs to be added to the graph.
+ */
+
+import { z } from "zod";
+import { IGraph } from "@/libs/graph/repositories/IGraph";
+import { TypeScriptExportValues } from "@/libs/typescript-graph/domain/libs/TypeScriptFoundations";
+import { TypeScriptEdge } from "@/libs/typescript-graph/domain/TypeScriptEdge";
+import {
+  TypeScriptNode,
+  TypeScriptNodeTypes,
+  TypeScriptNodeStatus,
+  SourceLocation,
+} from "@/libs/typescript-graph/domain/TypeScriptNode";
+import { CreateNodeFn } from "@/libs/typescript-graph/domain/utils/CreateNodeFn";
+import { generateNodeId } from "@/libs/typescript-graph/mappers/utils/generateNodeId";
+import { NodeTypeMap } from "@/libs/typescript-graph/mappers/utils/getFactoryForEntity";
+
+/**
+ * Result type containing both the node and whether it was newly created.
+ * This allows callers to determine whether the node needs to be added to the graph.
+ */
+type NodeCreationResult<T> = {
+  /** The retrieved or newly created node */
+  node: T;
+  /** Indicates if this is a new node (true) or an existing one (false) */
+  isNewNode: boolean;
+};
+
+/**
+ * Checks for an existing node by its generated ID, or creates a new placeholder node if none exists.
+ * Unlike direct graph manipulation, this function only performs existence checks and node creation,
+ * allowing the caller to determine how to handle new nodes.
+ *
+ * @template T - The specific TypeScript node type to retrieve or create, as defined in `TypeScriptNodeTypes`.
+ *
+ * @param {IGraph<TypeScriptNode<z.ZodTypeAny>, TypeScriptEdge>} graph - The graph instance for existence checks.
+ * @param {string} identifier - A unique identifier that, along with `nodeType` and `name`, is used to generate the node's unique ID.
+ * @param {T} nodeType - The specific type of the TypeScript node, as defined in `TypeScriptNodeTypes`.
+ * @param {string} name - The name of the node, such as the name of a class, function, or property, which is used in the ID generation.
+ * @param {CreateNodeFn<NodeTypeMap[T]["node"], NodeTypeMap[T]["data"]>} createFn - A factory function for creating new nodes of the specified type.
+ * @param {TypeScriptExportValues} scope - The export scope or visibility of the node, indicating whether it is internal or external to the module.
+ * @param {SourceLocation} location - The location of the node in the source code, including file path and start/end positions.
+ * @param {Partial<NodeTypeMap[T]["data"]>} [entityData={}] - Optional additional data specific to the node type. If not provided, defaults to an empty object.
+ *
+ * @returns {NodeCreationResult<NodeTypeMap[T]["node"]>} Object containing:
+ *   - node: The existing node if found, otherwise a new placeholder node created by `createFn`
+ *   - isNewNode: Boolean indicating if the node was newly created (true) or already existed (false)
+ *
+ * @example
+ * ```typescript
+ * // Check for existing node or create new placeholder
+ * const result = getNodeOrCreatePlaceholder(
+ *   graph,
+ *   "uniqueIdentifier",
+ *   TypeScriptNodeTypes.Class,
+ *   "MyClass",
+ *   createClassNode,
+ *   TypeScriptExportValues.Internal,
+ *   { filePath: "/path/to/file.ts", startLine: 1, startColumn: 1, endLine: 10, endColumn: 5 },
+ *   { decorators: ["MyDecorator"] }
+ * );
+ *
+ * if (result.isNewNode) {
+ *   // Handle new node creation
+ *   // e.g., include in MappingResult.nodes
+ * }
+ *
+ * // Use the node ID for relationship creation regardless of whether it's new
+ * const edge = createTypeScriptEdge(
+ *   generateEdgeId(sourceId, relationship, result.node.id),
+ *   sourceId,
+ *   result.node.id,
+ *   relationship
+ * );
+ * ```
+ */
+export function getNodeOrCreatePlaceholder<T extends TypeScriptNodeTypes>(
+  graph: IGraph<TypeScriptNode<z.ZodTypeAny>, TypeScriptEdge>,
+  identifier: string,
+  nodeType: T,
+  name: string,
+  createFn: CreateNodeFn<NodeTypeMap[T]["node"], NodeTypeMap[T]["data"]>,
+  scope: TypeScriptExportValues,
+  location: SourceLocation,
+  entityData: Partial<NodeTypeMap[T]["data"]> = {}
+): NodeCreationResult<NodeTypeMap[T]["node"]> {
+  // Generate a unique node ID based on identifier, type, and name to ensure consistency across lookups.
+  const nodeId = generateNodeId(identifier, nodeType, name);
+
+  // Attempt to retrieve an existing node from the graph by the generated ID.
+  const existingNode = graph.getNode<NodeTypeMap[T]["node"]>(nodeId);
+
+  // If an existing node is found, return it with isNewNode = false
+  if (existingNode) {
+    return {
+      node: existingNode,
+      isNewNode: false,
+    };
+  }
+
+  // Create a new node as a placeholder with the specified type and status if no existing node is found.
+  const newNode = createFn(
+    nodeId,
+    name,
+    scope,
+    TypeScriptNodeStatus.Placeholder, // Newly created nodes are placeholders by default.
+    location,
+    entityData
+  );
+
+  // Return the new node with isNewNode = true
+  return {
+    node: newNode,
+    isNewNode: true,
+  };
+}

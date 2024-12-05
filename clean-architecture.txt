@@ -1,0 +1,23 @@
+Project Documentation
+
+This documentation outlines the structure and organization of the project based on the principles of Clean Architecture. 
+It describes the folder organization, the role of various components, and how they interact to create a modular, maintainable, and scalable application.
+
+Folder Structure Explanation
+
+src/
+├── apps                           # Application layer
+    |-- <application>
+	    ├── utils                  # Utility functions used across <application>
+├── libs                           # Libraries used by the application layer
+    |-- <library>                  # A container for a specific library 
+       ├── domain                  # Domain layer containing core entities of the <library>
+       ├── mappers	               # Convert data between the <library> repositories and domains
+       ├── repositories            # Data access methods used in the <library>
+       ├── usecases                # Specific use cases defining logic and flow for the <library>
+│      ├── utils                   # Utility functions used across the <library>
+├── utils                          # Utility functions used across apps
+├── x-tests                        # Mirrors apps, libs, and utils folders with *.test.ts 
+
+
+NOTE: Each folder can implement the same core clean architeture folders: domain, mappers, repositories, usecases, utils
